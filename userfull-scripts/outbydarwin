@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f                                                                                   
+set timeout 60
+spawn ssh -D 7070 -N elasticdarwin@ssh8.blockcn.com
+
+expect {
+    "(yes/no)?" { send "yes\r"; exp_continue }
+    "password:" { send "zhelee.neu\r" }
+}
+
+expect {
+    "password" { puts "Bad password!"; exit }
+    "*" { puts "" }
+}
+#; wait -i $spawn_id 
+
+puts "Your ssh proxy started."
+while (1) {
+    sleep 60    
+}

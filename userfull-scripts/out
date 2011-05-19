@@ -1,0 +1,1 @@
+plink -N -v yangqi@184.82.18.46 -D 127.0.0.1:7070  -pw admin

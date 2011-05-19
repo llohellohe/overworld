@@ -1,0 +1,1 @@
+mvn a2m:install-antx-module-intl -Drepository.project=/home/yangqi/.antx/repository.project -Dmaven.test.skip=true

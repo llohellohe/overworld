@@ -1,0 +1,2 @@
+sudo mount -t nfs -o rw 10.249.194.30:/home/admin/pub/volume_www /mnt/efs/www
+

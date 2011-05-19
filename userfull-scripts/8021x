@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ `id -u` != 0 ]
+then
+    echo "****************************************************"
+    echo "*Error: only root (the superuser) can run this script.*"
+    echo "****************************************************"    
+    exit 1
+fi
+
+/etc/init.d/networking stop
+
+killall wpa_supplicant
+wpa_supplicant -B -i eth0 -c /home/yangqi/Desktop/wpa_supplicant.conf -D wired
+
+/etc/init.d/networking start
