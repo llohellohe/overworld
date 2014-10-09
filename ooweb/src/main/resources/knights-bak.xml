@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+     
+  <bean id="knight" class="o2.biz.KnightImpl"/>
+
+  <context:mbean-server />
+
+   <context:mbean-export default-domain="YangqiMBean" registration="replaceExisting" />
+
+
+ <bean id="homeController" class="o2.web.mvc.HomeController"/>
+
+
+    <!--
+    <bean class="com.taobao.hsf.app.spring.util.HSFSpringProviderBean" init-method="init">
+        <!--serviceInterface必须配置[String]，为服务对外提供的接口-->
+        <property name="serviceInterface">
+            <value>o2.biz.Knight</value>
+        </property>
+        <!--target必须配置[ref]，为需要发布为HSF服务的spring bean id-->
+        <property name="target">
+            <ref bean="knight"/>
+        </property>
+        <!--serviceVersion为可选配置[String]，含义为服务的版本，默认为1.0.0-->
+        <property name="serviceVersion">
+            <value>1.0.0</value>
+        </property>
+        <!--serviceName为推荐配置[String]，含义为服务的名称，便于管理，默认为null-->
+        <property name="serviceName">
+            <value>HelloKnightService</value>
+        </property>
+        <!--serviceDesc为可选配置[String]，含义为服务的描述信息，便于管理，默认为null-->
+        <property name="serviceDesc">
+            <value>HelloKnightService provided by HSF</value>
+        </property>
+        <!--serviceGroup为可选配置[String]，含义为服务所属的组别，以便按组别来管理服务的配置，默认为HSF-->
+        <property name="serviceGroup">
+            <value>HSF</value>
+        </property>
+        <!--supportAsynCall为可选配置[true|false]，含义为标识此服务是否支持异步调用，默认值为false，也就是不支持异步调用-->
+        <property name="supportAsynCall">
+            <value>false</value>
+        </property>
+    </bean> -->
+ </beans>
